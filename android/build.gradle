@@ -1,0 +1,10 @@
+// android/build.gradle (Groovy) - minimal: DO NOT declare repositories here.
+
+subprojects {
+    // If some subprojects need to be evaluated early
+    evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
+}

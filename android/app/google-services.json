@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "942862744242",
+    "project_id": "multi-detection-system",
+    "storage_bucket": "multi-detection-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942862744242:android:de4f0201652b78fade27ab",
+        "android_client_info": {
+          "package_name": "com.example.multi_detection_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHTRyk3nv6tMBTFts7JitkcKny5to0UG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
