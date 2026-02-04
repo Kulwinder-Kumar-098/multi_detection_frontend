@@ -63,6 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       rememberMe: _rememberMe,
     );
 
+    if (!mounted) return;
     setState(() => _isLoading = false);
 
     bool success = false;
@@ -80,17 +81,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
       message = 'Unexpected response from auth provider.';
     }
 
-    if (success && approved && mounted) {
+    if (success && approved) {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const HomeScreen()),
             (route) => false,
       );
-    } else if (success && !approved && mounted) {
+    } else if (success && !approved) {
       // Registered but awaiting approval
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Registration successful. Waiting for admin approval.')),
       );
-    } else if (mounted) {
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message ?? 'Registration failed. Try again.')),
       );

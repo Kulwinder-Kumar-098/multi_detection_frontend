@@ -53,6 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
       _rememberMe,
     );
 
+    if (!mounted) return;
     setState(() => _isLoading = false);
 
     // Normalize provider response to a bool and extract message
@@ -70,11 +71,11 @@ class _LoginScreenState extends State<LoginScreen> {
       message = 'Unexpected response from auth provider.';
     }
 
-    if (success && mounted) {
+    if (success) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => const HomeScreen()),
       );
-    } else if (mounted) {
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message ?? 'Login failed. Please check credentials.')),
       );
